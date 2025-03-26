@@ -166,10 +166,11 @@ Although the SIP Author is responsible for driving the SIP, the SIP Editor is av
 
 The current register of SIP Editors is as follows:
 
-| Name | GitHub username | Email address | Affiliation |
-| ----- | ----- | ----- | ----- |
-| \[Editor 1\] | \[username1\] | \[email1\] | Sei Labs |
-| \[Editor 2\] | \[username2\] | \[email2\] | Sei Foundation |
+| Name   | GitHub Username | Email Address         | Affiliation    |
+|--------|-----------------|------------------------|----------------|
+| Cordt  | cordt-sei       | cordt@seifdn.org       | Sei Foundation |
+| Bryan  | besated         | bryan@seinetwork.io    | Sei Labs       |
+| Philip | philipsu522     | philip@seinetwork.io   | Sei Labs       |
 
 ## **SIP Repository Access Policy**
 
@@ -220,7 +221,8 @@ Assets (including images, code, and data) may be embedded into or linked from th
 
 ## **History**
 
-This SIP has built on key concepts from both Bitcoin's BIP-0001, Ethereum's EIP-1, and Sui's SIP-1, and also Solana’s SIMD-1.
+This SIP has built on key concepts from both Bitcoin's [BIP-0001](https://github.com/bitcoin/bips/blob/master/bip-0001.mediawiki), Ethereum's [EIP-1](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md), 
+and Sui's [SIP-1](https://github.com/sui-foundation/sips/blob/main/sips/sip-1.md), and also Solana’s [SIMD-1](https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0001-simd-process.md).
 
 ## **Copyright**
 
