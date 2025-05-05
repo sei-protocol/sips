@@ -1,12 +1,16 @@
-| SIP-Number | X |
-| ----- | ----- |
-| Title | External transaction bundles support |
-| Description | Offchain transaction bundle submission to enable MEV operation |
+**SIP-2: External transaction bundles support**
+
+| SIP-Number | 2                                                                                  |
+| ----- |------------------------------------------------------------------------------------|
+| Title | External transaction bundles support                                               |
+| Description | Offchain transaction bundle submission to enable MEV operation                     |
 | Authors | Maks Pawlak \[seimev.simple103@passmail.net]<br>Bob DeFarmer \[bob@silostaking.io] |
-| Type | Standard |
-| Category | Framework |
-| Created | 2025-04-11 |
-| Status | Idea |
+| Editor | Philip Su \[philip@seinetwork.io]                                                  |
+| Type | Standard                                                                           |
+| Category | Framework                                                                          |
+| Created | 2025-04-11                                                                         |
+| Comments-URI | https://github.com/sei-protocol/sips/discussions/6 |
+| Status | Draft                                                                              |
 
 ## **Background & Motivation**
 
