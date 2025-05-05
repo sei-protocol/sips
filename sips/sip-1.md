@@ -168,7 +168,6 @@ The current register of SIP Editors is as follows:
 
 | Name   | GitHub Username | Email Address         | Affiliation    |
 |--------|-----------------|------------------------|----------------|
-| Cordt  | cordt-sei       | cordt@seifdn.org       | Sei Foundation |
 | Bryan  | besated         | bryan@seinetwork.io    | Sei Labs       |
 | Philip | philipsu522     | philip@seinetwork.io   | Sei Labs       |
 
