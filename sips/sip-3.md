@@ -1,14 +1,14 @@
 **SIP-3: Deprecating CosmWasm & Cosmos**
 
-| SIP-Number | 3 |
-| :---- | :---- |
-| Title | EVM only |
-| Description | Evolve Sei to be EVM only |
-| Author | [Philip Su](http://philip@seinetwork.io) |
-| Reviewer | [Bryan Tran](mailto:bryan@seinetwork.io) |
-| Type | Standard (Core) |
-| Created | 05/07/2025 |
-| Status | Living |
+| SIP-Number | 3                                                  |
+| :---- |:---------------------------------------------------|
+| Title | EVM only                                           |
+| Description | Evolve Sei to be EVM only                          |
+| Author | [Philip Su](mailto:philip@seinetwork.io)           |
+| Reviewer | [Bryan Tran](mailto:bryan@seinetwork.io)           |
+| Type | Standard (Core)                                    |
+| Created | 05/07/2025                                         |
+| Status | Living                                             |
 | Comments | https://github.com/sei-protocol/sips/discussions/9 |
 
 ## **Current State of Sei**
