@@ -9,7 +9,7 @@
 | Type | Standard (Core) |
 | Created | 05/07/2025 |
 | Status | Living |
-| Comments | TODO |
+| Comments | https://github.com/sei-protocol/sips/discussions/9 |
 
 ## **Current State of Sei**
 
