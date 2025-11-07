@@ -9,7 +9,7 @@
 | Type | Standard (Core)                                    |
 | Created | 11/20/2025                                         |
 | Status | Living                                             |
-| Comments |  |
+| Comments | https://github.com/sei-protocol/sips/discussions/11 |
 
 ## **Context/Background**
 
