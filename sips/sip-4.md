@@ -30,7 +30,7 @@ As the network’s usage continues to grow in usage, and there is more incentive
 
 ## **Proposal**
 
-Sei Labs has determined that the pacific-1 chain can support at least 2M gas per block without block time degradation, meaning more gas per block and thus more transaction capacity. Therefore, we propose to more than double the target block gas used to 2M. This will significantly increase pacific-1’s capacity for more transactions at cheap gas prices with the limit remaining at 10M.
+Sei Labs and a number of key ecosystem contributors conducted rigorous testing and believe this number could conservatively be raised to 2M gas per block without impacting performance, meaning more gas per block and thus more transaction capacity. Therefore, we propose to more than double the target block gas used to 2M. This will significantly increase pacific-1’s capacity for more transactions at cheap gas prices with the limit remaining at 10M.
 
 To counteract the change above, we also propose to increase the minimum base fee from 1gwei to 10gwei, a ~3x increase from today's 3 gwei average in order to combat fee volatility from spam transactions. 
 
