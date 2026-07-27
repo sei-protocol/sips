@@ -5,11 +5,11 @@
 | Title | Post-Quantum Authorization for EVM Accounts |
 | Description | Adds post-quantum key binding, account level cutover, and a global classical signature cutoff for EVM accounts. |
 | Author | [Maja Lie](mailto:maja@seinetwork.io) and [Benjamin Marsh](mailto:ben@seinetwork.io)  |
-| Reviewer | [Philip Su](mailto:phil@seinetwork.io)           |
+| Reviewer | [Philip Su](mailto:philip@seinetwork.io)           |
 | Type | Standard (Core) |
 | Created | 07/27/2026 |
 | Status | Draft |
-| Comments | https://github.com/sei-protocol/sips/discussions/TBD |
+| Comments | https://github.com/sei-protocol/sips/discussions/15 |
 
 ## **Abstract**
 
