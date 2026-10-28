@@ -6,7 +6,7 @@
 | Author | [Benjamin Marsh](mailto:ben@seinetwork.io), [Wen Xu](mailto:wen@seinetwork.io) , [Masih Derkani](mailto:masih@seinetwork.io) , [Philip Su](mailto:philip@seinetwork.io)  | Type | Standard (Core) |
 | Created | 10/27/2026 |
 | Status | Draft |
-| Comments | https://github.com/sei-protocol/sips/discussions/TBD |
+| Comments | https://github.com/sei-protocol/sips/discussions/17 |
 
 ## **Abstract**
 
