@@ -14,7 +14,7 @@
 
 This SIP reduces the unbonding time on pacific-1 from 21 days to 7 days. This lowers the liquidity risk of staking for SEI holders, because a staker who exits gets their tokens back 14 days sooner.
 
-The change takes one governance proposal that updates the `staking/UnbondingTime` parameter. No chain upgrade is needed. Undelegations and redelegations that are already in progress when the proposal executes keep their original 21-day completion time.
+The change takes one governance proposal that updates the `staking/UnbondingTime` parameter. No upgrade height or coordinated upgrade is needed. Undelegations and redelegations that are already in progress when the proposal executes keep their original 21-day completion time.
 
 At 7 days, unbonding is still longer than the 3-day governance voting period and the 48-hour evidence max age. sei-chain v6.7.3 and later fix the state sync trust period at 112 hours, which is two-thirds of the new unbonding time. Node operators who use state sync only need to run one of these releases. They do not need to change any configuration.
 
@@ -150,7 +150,7 @@ Because of this, an undelegation started in the 14 days before X can complete la
 
 ### **Protocols and Contracts**
 
-A contract that hardcodes 21 days usually keeps working, but the chain returns principal to it after 7 days. A contract that books balance increases as rewards can count that principal as rewards.
+A contract that hardcodes 21 days usually keeps working, but the chain returns principal to it after 7 days. A contract that books balance increases as rewards can count that principal as rewards. Its users still get their tokens when the contract releases them, after 21 days.
 
 Do not lower a hardcoded value before X + 21 days, because until then the chain still has open 21-day entries. A contract that switches to 7 days too early expects tokens that the chain has not released yet. What happens next depends on the contract's design: its withdrawals may revert, or it may book the shortfall as a slash.
 
