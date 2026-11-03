@@ -70,9 +70,9 @@ The unbonding time has to stay longer than each of these time limits on pacific-
 | Voting period | 3 days | Governance can pass a response to an attack before the chain releases the stake behind it |
 | State sync trust period (fixed in v6.8) | 112 hours (about 4.7 days) | Signers of a trusted header cannot leave before it expires |
 
-Seven days clears all four with room to spare: 4 days over the voting period, and 56 hours over the trust period. It also leaves enough time to notice an attack and respond, even over a weekend or a holiday.
+Seven days clears all three with room to spare: 4 days over the voting period and 5 days over the evidence window. It also leaves enough time to notice an attack and respond, even over a weekend or a holiday.
 
-Going below 7 days would shrink the margins over the voting period and the trust period. Anything between 7 and 21 days keeps more of the risk this SIP sets out to reduce, without buying meaningful extra safety against the limits above.
+Going below 7 days would shrink the margin over the voting period, and would need a sei-chain release to lower the state sync trust period first. Anything between 7 and 21 days keeps more of the risk this SIP sets out to reduce, without buying meaningful extra safety against the limits above.
 
 ### **Alternatives Considered**
 
@@ -150,7 +150,7 @@ Because of this, an undelegation started in the 14 days before X can complete la
 
 ### **Protocols and Contracts**
 
-A contract that hardcodes 21 days keeps working correctly. The chain releases its tokens after 7 days, but its users still wait the full 21 days before they get them.
+A contract that hardcodes 21 days usually keeps working, but the chain returns principal to it after 7 days. A contract that books balance increases as rewards can count that principal as rewards.
 
 Do not lower a hardcoded value before X + 21 days, because until then the chain still has open 21-day entries. A contract that switches to 7 days too early expects tokens that the chain has not released yet. What happens next depends on the contract's design: its withdrawals may revert, or it may book the shortfall as a slash.
 
