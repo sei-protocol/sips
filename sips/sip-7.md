@@ -14,9 +14,9 @@
 
 This SIP reduces the unbonding time on pacific-1 from 21 days to 7 days. This lowers the liquidity risk of staking for SEI holders, because a staker who exits gets their tokens back 14 days sooner.
 
-The change takes one governance proposal that updates the `staking/UnbondingTime` parameter. No binary upgrade is needed. Undelegations and redelegations that are already in progress when the proposal executes keep their original 21-day completion time.
+The change takes one governance proposal that updates the `staking/UnbondingTime` parameter. No chain upgrade is needed. Undelegations and redelegations that are already in progress when the proposal executes keep their original 21-day completion time.
 
-At 7 days, unbonding is still longer than the 3-day governance voting period and the 48-hour evidence max age. Node operators who use state sync must set their trust period to 112 hours or less, which is two-thirds of the new unbonding time.
+At 7 days, unbonding is still longer than the 3-day governance voting period and the 48-hour evidence max age. sei-chain v6.7.3 and later fix the state sync trust period at 112 hours, which is two-thirds of the new unbonding time. Node operators who use state sync only need to run one of these releases. They do not need to change any configuration.
 
 ## **Motivation**
 
@@ -49,9 +49,9 @@ An entry's completion time is fixed when the entry is created and is never recal
 
 ### **Default Trust Period for State Sync**
 
-A state sync light client does not trust a header older than its trust period. The trust period must be shorter than the unbonding time, with enough time left to detect and report misbehavior while the validators that signed the header are still bonded or unbonding. The current default is 168 hours, which is exactly 7 days and would leave no time at all.
+A state sync light client does not trust a header older than its trust period. The trust period must be shorter than the unbonding time, with enough time left to detect and report misbehavior while the validators that signed the header are still bonded or unbonding. Releases before v6.7.3 default to 168 hours, which is exactly 7 days and would leave no time at all.
 
-sei-chain v6.8 fixes the trust period at 112 hours and removes the setting, so operators can no longer configure it. 112 hours is two-thirds of the new unbonding time, which leaves 56 hours to report misbehavior. A node running v6.8 or later needs no change and ignores any `trust-period` value still in its config file. A node that still runs v6.7 or earlier must set `[statesync] trust-period` to 112 hours or less before X (refer to [Validators and Node Operators](#validators-and-node-operators)).
+sei-chain v6.7.3 and later, including v6.8, fix the trust period at 112 hours and remove the setting, so operators can no longer configure it. 112 hours is two-thirds of the new unbonding time, which leaves 56 hours to report misbehavior. A node on one of these releases needs no configuration change and ignores any `trust-period` value still in its config file. A node that uses state sync must run v6.7.3 or later before X (refer to [Validators and Node Operators](#validators-and-node-operators)).
 
 ### **Out of Scope**
 
@@ -68,7 +68,7 @@ The unbonding time has to stay longer than each of these time limits on pacific-
 | Expedited voting period | 1 day | Governance can pass a response to an attack before the chain releases the stake behind it |
 | Evidence window | 48 hours | Stake stays slashable for any evidence the chain accepts |
 | Voting period | 3 days | Governance can pass a response to an attack before the chain releases the stake behind it |
-| State sync trust period (fixed in v6.8) | 112 hours (about 4.7 days) | Signers of a trusted header cannot leave before it expires |
+| State sync trust period (fixed in v6.7.3 and later) | 112 hours (about 4.7 days) | Signers of a trusted header cannot leave before it expires |
 
 Seven days clears all three with room to spare: 4 days over the voting period and 5 days over the evidence window. It also leaves enough time to notice an attack and respond, even over a weekend or a holiday.
 
@@ -134,7 +134,7 @@ A former validator's keys have no stake behind them once its unbonding completes
 
 ### **Light Clients and State Sync**
 
-A light client must not trust a header older than its trust period. At 7 days, the old default of 168 hours would leave no time to report misbehavior. sei-chain v6.8 fixes the trust period at 112 hours. Nodes on v6.7 or earlier must set `[statesync] trust-period` to 112 hours or less (refer to [Default Trust Period for State Sync](#default-trust-period-for-state-sync)).
+A light client must not trust a header older than its trust period. At 7 days, the old default of 168 hours would leave no time to report misbehavior. sei-chain v6.7.3 and later fix the trust period at 112 hours. A node that uses state sync must run one of these releases, and it needs no configuration change (refer to [Default Trust Period for State Sync](#default-trust-period-for-state-sync)).
 
 A node that has been offline for more than 7 days must not trust unknown peers when it syncs again. It must sync from trusted peers or from a recent trusted header. Today, this limit is 21 days.
 
@@ -170,7 +170,7 @@ Do not display a fixed 21 days. Read the current value from `/cosmos/staking/v1b
 
 ### **Validators and Node Operators**
 
-1. If your node uses state sync, run v6.8 or later. If it still runs v6.7 or earlier, set `[statesync] trust-period` to 112 hours or less before X (refer to [Default Trust Period for State Sync](#default-trust-period-for-state-sync)).
+1. If your node uses state sync, run v6.7.3 or later before X. You do not need to change its configuration (refer to [Default Trust Period for State Sync](#default-trust-period-for-state-sync)).
 2. When you state sync, use a trust height less than 112 hours old.
 3. Before you vote, check that the proposal sets the value to `604800000000000`.
 
