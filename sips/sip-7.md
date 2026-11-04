@@ -8,7 +8,7 @@
 | Type | Standard (Core) |
 | Created | 10/26/2026 |
 | Status | Draft |
-| Comments | TBD |
+| Comments | https://github.com/sei-protocol/sips/discussions/19 |
 
 ## **Abstract**
 
